@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
+const dateToday = new Date().toISOString().slice(0,10);
+
 class AddTask extends Component {
     state = { 
         value: '',
-        date: '',
+        date: dateToday,
         category: 'normal',
      }
 
@@ -30,17 +32,23 @@ class AddTask extends Component {
     //    const newList = 
        if(value && date && category) {
            this.props.addTask(value, date, category)
+
+           this.setState({
+            value: '',
+            date: dateToday,
+            category: 'normal',
+       })
        }
     } 
     render() { 
-
+        const maxDate = (dateToday.slice(0,4) * 1 + 1) + "-12-31";
         return ( 
             <>
             
                 <h2>Add Task</h2>
                
                 <div><label htmlFor="taskValue">Task: </label><input type="text" id="taskValue" value={this.state.value} onChange={this.handleClick} placeholder="add task"/></div>
-                <div><label htmlFor="deadline">Completion date:</label> <input type="date" id="deadline" value={this.state.date}  onChange={this.handleClick} size="1"/></div>
+                <div><label htmlFor="deadline">Completion date:</label> <input type="date" id="deadline" value={this.state.date}  onChange={this.handleClick} min={dateToday} max={maxDate}/></div>
                 <div><label htmlFor="group">Category: </label>
                     <select id="group" value={this.state.category}  onChange={this.handleClick}>
                         <option value="normal">Normal</option>
