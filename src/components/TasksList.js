@@ -4,15 +4,22 @@ import Task from './Task'
 const TasksList = props => {
     const active = props.tasks.filter(task => task.active === true);
     const done = props.tasks.filter(task => task.active !== true);
-    const ActiveTask = active.map(task => <Task key={task.id} task={task}/>)
-    const DoneTask = done.map(task => <Task key={task.id} task={task}/>)
+    const ActiveTask = active.map(task => <Task key={task.id} task={task} handleCheck={props.handleCheck} handleRemove={props.handleRemove}/>)
+    const DoneTask = done.map(task => <Task key={task.id} task={task} handleRemove={props.handleRemove}/>)
+
     return ( 
         <Fragment>
-            <h1>To Do</h1>
-            <div>{ActiveTask}</div>
+            <div className="toDoSection">
+                <h1>To Do ({ActiveTask.length})</h1>
+                <div>{ActiveTask.length > 0 ? ActiveTask : <p>Find yourself something to do!</p>}</div>
+            </div>
             <hr/>
-            <h1>Done</h1>
-            <div>{DoneTask}</div>
+  
+            <div className="doneSection">
+                <h1>Done ({DoneTask.length})</h1>
+                <div>{DoneTask}</div>
+            </div>
+            
         </Fragment>
      )
 }

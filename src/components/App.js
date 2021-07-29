@@ -60,13 +60,33 @@ class App extends Component {
     idCounter++;
     console.log(idCounter)
   }
+
+  handleCheck = id => {
+    console.log(id)
+    const tasks = [...this.state.tasks]
+
+    tasks.forEach(task => {
+      if(task.id === id) task.active = false
+    })
+    this.setState({
+      tasks
+    })
+  }
+
+  handleRemove = id => {
+    console.log(id)
+    const tasks = [...this.state.tasks].filter( task => task.id !== id)
+    this.setState({
+      tasks
+    })
+  }
   render() { 
     return ( 
         <div className="App">
           <h1>Plan your day just here, just now!</h1>
           <q>The secret of getting ahead is getting started.</q>
           <AddTask tasks={this.state.tasks} addTask={this.addTast}/>
-          <TasksList tasks={this.state.tasks}/>
+          <TasksList tasks={this.state.tasks} handleRemove={this.handleRemove} handleCheck={this.handleCheck}/>
           <footer>designed and created by Bartosz Zięcina</footer>
         </div>
      );
