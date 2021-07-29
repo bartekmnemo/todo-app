@@ -32,7 +32,7 @@ class AddTask extends Component {
         e.preventDefault()
        const {value, date, category} = this.state
     //    const newList = 
-       if(value && date && category) {
+       if(value  && date && category) {
            this.props.addTask(value, date, category)
 
            this.setState({

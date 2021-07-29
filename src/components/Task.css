@@ -3,24 +3,34 @@
 
 .item {
     display: flex;
+    align-items: center;
     /* justify-content: center; */
     width: 100%;
     margin: 20px 0;
 }
 
-.item p {
-    margin: 0;
+.leftSection {
+    width: 80%;
+}
+
+.rightSection {
+    display: flex;
+    width: 20%;
+}
+
+.item .taskP{
+    margin-right: 100px;
     padding: 10px;
-    flex-grow: 2;
     justify-self: flex-start;
-    font-size: 24px;
+    font-size: 32px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.158);
     border-top: 2px solid rgba(0, 0, 0, 0.158);
-    border-radius: 20% 0% 0% 20%;
+    border-radius: 20% 10% 10% 20%;
 }
 
 .item button {
-    width: 10%;
+    flex-grow: 1;
+    height: 60px;
     justify-self: flex-end;
     margin-left:10px ;
     border-radius: 6%;

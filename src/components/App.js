@@ -10,31 +10,7 @@ let idCounter = 3;
 
 class App extends Component {
 
-  state = {
-    tasks: [
-      {
-      id: 0,
-      text: "Wyjdź z psem",
-      category: {name: "important",color: "red"},
-      date: "2021-10-22",
-      active: false,
-      finishDate: null
-      },
-      {
-        id: 1,
-        text: "Poleć na marsa",
-        category: {name: "job",color: "blue"},
-        date: "2021-09-02",
-        active: true,
-        finishDate: null
-      },{
-        id: 2,
-        text: "Zbuduj wehikuł czasu",
-        category: {name: "personal",color: "green"},
-        date: "2021-07-14",
-        active: true,
-        finishDate: null
-      }]}
+  state = {tasks: []}
 
   addTast = (value, date, category) => {
     console.log(value, date, category)

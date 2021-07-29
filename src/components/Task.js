@@ -9,7 +9,12 @@ const Task = props => {
     if(props.task.active){
         return ( 
             <div className="item">
-              <p style={style}><strong>{props.task.text}</strong>, czas do {props.task.date} </p> <button onClick={() => props.handleCheck(props.task.id)}><i className="fas fa-check"></i></button> <button onClick={() => props.handleRemove(props.task.id)}><i className="fas fa-trash-alt"></i></button>
+              <div className="leftSection">
+                 <p className="taskP" style={style}><strong>{props.task.text}</strong>, deadline: {props.task.date} </p>
+              </div>
+              <div className="rightSection">
+                <button onClick={() => props.handleCheck(props.task.id)}><i className="fas fa-check"></i></button> <button onClick={() => props.handleRemove(props.task.id)}><i className="fas fa-trash-alt"></i></button>
+              </div>
             </div>
          );
     }
@@ -17,7 +22,12 @@ const Task = props => {
         const time = new Date().toLocaleDateString()
         return ( 
             <div className="item">
-              <p style={style}><strong>{props.task.text}</strong> - {time}</p> <button onClick={() => props.handleRemove(props.task.id)}><i className="fas fa-trash-alt"></i></button>
+                 <div className="leftSection">
+                     <p className="taskP" style={style}><strong>{props.task.text}</strong> - {time}</p>
+                </div>
+                <div className="rightSection">
+                    <button onClick={() => props.handleRemove(props.task.id)}><i className="fas fa-trash-alt"></i></button>
+               </div>
             </div>
          );
     }

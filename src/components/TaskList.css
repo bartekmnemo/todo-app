@@ -5,10 +5,15 @@
     width: 100%;
     /* margin: 0 auto; */
     padding: 20px;
-    text-align: justify;
+    text-align: center;
     background-color: rgb(238, 238, 238);
     border-top: 2px solid black;
     border-bottom: 2px solid black;
+}
+
+.list p {
+    margin: 0;
+    font-size: 42px;
 }
 
 .listSection h1{
