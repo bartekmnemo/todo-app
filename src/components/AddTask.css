@@ -76,3 +76,35 @@ form select option:nth-child(3) {
         background-color: red;
         }
 
+@media screen and (max-width:1024px) {
+form {
+    width:100%;
+    flex-wrap: wrap;
+}
+
+form div {
+    width: 100%;
+    height: 150px;
+    padding: 20px;
+}
+
+form div label {
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+}
+
+form input, select {
+    width: 100%;
+}
+
+
+
+form .btn {
+    width: 90%;
+    height: 60px;
+    color: white;
+    background-color: black;
+}
+
+} 
