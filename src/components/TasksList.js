@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import Task from './Task'
+import './TaskList.css'
 
 const TasksList = props => {
     const active = props.tasks.filter(task => task.active === true);
@@ -9,15 +10,19 @@ const TasksList = props => {
 
     return ( 
         <Fragment>
-            <div className="toDoSection">
-                <h1>To Do ({ActiveTask.length})</h1>
-                <div>{ActiveTask.length > 0 ? ActiveTask : <p>Find yourself something to do!</p>}</div>
+            <div className="listSection">
+            <h1>To Do ({ActiveTask.length})</h1>
+                <div className="list">   
+                   {ActiveTask.length > 0 ? ActiveTask : <p>Find yourself something to do!</p>}
+                </div>
             </div>
             <hr/>
   
-            <div className="doneSection">
-                <h1>Done ({DoneTask.length})</h1>
-                <div>{DoneTask}</div>
+            <div className="listSection">
+            <h1>Done ({DoneTask.length})</h1>
+                <div className="list">
+                    {DoneTask}
+                </div>        
             </div>
             
         </Fragment>

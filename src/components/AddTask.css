@@ -1,0 +1,78 @@
+.addTaskSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 20vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:80%;
+    margin-top: 50px;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+form h2 {
+    padding: 20px;
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+
+form div {
+    width: 100%;
+    height: 10vh;
+    /* padding: 10px; */
+    font-size: 24px;
+}
+
+form input, select {
+    align-self: flex-end;
+    width: 60%;
+    padding: 5px 10px;
+    border: 20x solid black;
+}
+
+form label {
+    display: inline-block;
+    width: 40%;
+    padding: 5px;
+    text-align: left;
+    align-self: flex-start;
+}
+
+
+
+form .btn {
+    width: 30%;
+    height: 60px;
+    margin: 20px;
+    color: white;
+    background-color: black;
+}
+
+form select option {
+    color: white;
+    background-color: black;
+    }
+
+form select::selection {
+   background-color: none;
+    }
+
+form select option:nth-child(2) {
+background-color: blue;
+}
+
+form select option:nth-child(3) {
+    background-color: green;
+    }
+
+    form select option:nth-child(4) {
+        background-color: red;
+        }
+

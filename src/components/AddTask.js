@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './AddTask.css';
 
 const dateToday = new Date().toISOString().slice(0,10);
 
@@ -44,12 +45,11 @@ class AddTask extends Component {
     render() { 
         const maxDate = (dateToday.slice(0,4) * 1 + 1) + "-12-31";
         return ( 
-            <div className="addTaskSection">
-            
-                <h2>Add Task</h2>
-               <form onSubmit>
-                    <div><label htmlFor="taskValue">Task: </label><input type="text" id="taskValue" value={this.state.value} onChange={this.handleClick} placeholder="add task"/></div>
-                    <div><label htmlFor="deadline">Completion date:</label> <input type="date" id="deadline" value={this.state.date}  onChange={this.handleClick} min={dateToday} max={maxDate}/></div>
+            <div className="addTaskSection">           
+               <form onSubmit={this.addNewTask}>
+                    <h2>Add Task</h2>
+                    <div><label htmlFor="taskValue">Task: </label><input type="text" id="taskValue" value={this.state.value} onChange={this.handleClick} placeholder="Add new task"/></div>
+                    <div><label htmlFor="deadline">Completion date:</label><input type="date" id="deadline" value={this.state.date}  onChange={this.handleClick} min={dateToday} max={maxDate}/></div>
                     <div><label htmlFor="group">Category: </label>
                         <select id="group" value={this.state.category}  onChange={this.handleClick}>
                             <option value="normal">Normal</option>
@@ -58,7 +58,7 @@ class AddTask extends Component {
                             <option value="important">Important</option>
                         </select>
                     </div>
-                    <button onClick={this.addNewTask}>Add</button>
+                    <button className="btn btn-outline-primary btn-lg">Add</button>
                 </form>
                 <hr />
             </div>

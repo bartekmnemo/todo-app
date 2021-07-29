@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
+import Header from './Header'
 import AddTask from './AddTask'
 import TasksList from './TasksList'
+import Footer from './Footer'
 
 let idCounter = 3;
 
@@ -84,11 +86,10 @@ class App extends Component {
   render() { 
     return ( 
         <div className="App">
-          <h1>Plan your day just here, just now!</h1>
-          <q>The secret of getting ahead is getting started.</q>
+          <Header/>
           <AddTask tasks={this.state.tasks} addTask={this.addTast}/>
           <TasksList tasks={this.state.tasks} handleRemove={this.handleRemove} handleCheck={this.handleCheck}/>
-          <footer>designed and created by Bartosz Zięcina</footer>
+          <Footer/>
         </div>
      );
   }
